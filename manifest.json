@@ -1,0 +1,29 @@
+{
+    "name": "Unclicker",
+    "description": "Prevent default youtube clicks",
+    "version": "0.1",
+    "options_page": "options.html",
+    "permissions": [
+        "tabs","<all_urls>","downloads"
+    ],
+    "background": {
+        "page": "background.html"
+    },
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+        "matches": [
+            "https://www.youtube.com/*"
+            ],
+         "css": ["css/content.css"],
+        "js": ["js/jquery.min.js","js/content.js","js/arrive.min.js"],
+        "run_at": "document_start"         
+        }
+    ], 
+    "web_accessible_resources": [
+        "css/content.css","js/arrive.min.js"
+    ],
+    "manifest_version":2
+}
